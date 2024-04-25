@@ -1,3 +1,3 @@
-import updateAppInfo from "..";
+import { updateAppInfo } from "..";
 
 updateAppInfo();
