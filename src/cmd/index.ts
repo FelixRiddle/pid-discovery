@@ -1,0 +1,3 @@
+import updateAppInfo from "..";
+
+updateAppInfo();
