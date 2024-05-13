@@ -5,7 +5,11 @@ import path from "path";
  * Update app information on the database
  */
 export async function updateAppInfo() {
-    const raw = fs.readFileSync(path.join(__dirname, "../", "package.json"));
+    // This doesn't work everywhere
+    // const raw = fs.readFileSync(path.join(__dirname, "../", "package.json"));
+    
+    const CWD = process.cwd();
+    const raw = fs.readFileSync(path.join(CWD, "package.json"));
     const packageJson = JSON.parse(raw.toString());
     
     // Insert / Update process to the database
@@ -20,7 +24,7 @@ export async function updateAppInfo() {
         url: ``,
     };
     
-    await fetch(`${url}/process`, {
+    return await fetch(`${url}/process`, {
         method: "POST",
         headers,
         body: JSON.stringify(data)
