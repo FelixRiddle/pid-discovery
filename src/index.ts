@@ -4,7 +4,7 @@ import path from "path";
 /**
  * Update app information on the database
  */
-export function updateAppInfo(): void {
+export async function updateAppInfo() {
     const raw = fs.readFileSync(path.join(__dirname, "../", "package.json"));
     const packageJson = JSON.parse(raw.toString());
     
@@ -20,7 +20,7 @@ export function updateAppInfo(): void {
         url: ``,
     };
     
-    fetch(`${url}/process`, {
+    await fetch(`${url}/process`, {
         method: "POST",
         headers,
         body: JSON.stringify(data)
