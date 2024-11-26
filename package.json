@@ -1,27 +1,28 @@
 {
-  "name": "felixriddle.pid-discovery",
-  "version": "1.0.4",
-  "description": "Used with 'app-manager' to update the pid in the database",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "start": "ts-node src/cmd/index.ts",
-    "build": "tsup"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/argparse": "^2.0.16",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "argparse": "^2.0.1"
-  }
+	"name": "felixriddle.pid-discovery",
+	"version": "1.0.5",
+	"description": "Used with 'app-manager' to update the pid in the database",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"start": "ts-node src/cmd/index.ts",
+		"build": "tsup"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/argparse": "^2.0.16",
+		"ts-node": "^10.9.2",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.5"
+	},
+	"dependencies": {
+		"argparse": "^2.0.1",
+		"felixriddle.ts-app-models": "^1.0.53"
+	}
 }
