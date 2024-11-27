@@ -1,6 +1,6 @@
 {
 	"name": "felixriddle.pid-discovery",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Used with 'app-manager' to update the pid in the database",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
