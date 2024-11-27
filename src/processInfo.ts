@@ -1,8 +1,7 @@
 import { Models } from "felixriddle.ts-app-models";
 import fs from "fs";
 import path from "path";
-
-export type AppType = "application" | "backend" | "frontend" | "library";
+import { AppInfo } from "./appInfo";
 
 /**
  * Update app information on the database
@@ -32,13 +31,6 @@ export async function updateAppInfo() {
 	});
 }
 
-export interface AppInfo {
-	name: string;
-	pid: number;
-	appType: AppType;
-	url: string;
-}
-
 /**
  * More configurable option to insert process information
  */
@@ -65,14 +57,17 @@ export async function upsertProcessInfo(appInfo: AppInfo) {
 /**
  * Insert / Update process information with sequelize
  */
-export async function upsertProcessInfoSequelize(models: Models, appInfo: AppInfo) {
+export async function upsertProcessInfoSequelize(
+	models: Models,
+	appInfo: AppInfo
+) {
 	const { Process } = models;
 
-    // Insert / Update model
-    return await Process.upsert({
-        name: appInfo.name,
-        pid: appInfo.pid,
-        appType: appInfo.appType,
-        url: appInfo.url,
-    });
+	// Insert / Update model
+	return await Process.upsert({
+		name: appInfo.name,
+		pid: appInfo.pid,
+		appType: appInfo.appType,
+		url: appInfo.url,
+	});
 }
