@@ -2,6 +2,8 @@ import { Models } from "felixriddle.ts-app-models";
 import fs from "fs";
 import path from "path";
 
+export type AppType = "application" | "backend" | "frontend" | "library";
+
 /**
  * Update app information on the database
  */
@@ -33,7 +35,7 @@ export async function updateAppInfo() {
 export interface AppInfo {
 	name: string;
 	pid: number;
-	appType: string;
+	appType: AppType;
 	url: string;
 }
 
