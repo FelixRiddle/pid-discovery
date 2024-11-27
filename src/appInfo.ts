@@ -33,7 +33,7 @@ export function getAppName(): string {
 /**
  * Create app info
  */
-export async function createAppInfo(appType: AppType, name: string = getAppName()) {
+export function createAppInfo(appType: AppType, name: string = getAppName()) {
 	// Fetch port and domain from environment variables
 	const port = process.env.PORT;
 	const domain = process.env.DOMAIN;
